@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="heading">
+        <p>lorem thi</p>
+        <div id="sum">
+<h2>this is id heading</h2>
+        </div>
+
+    </div>
+
+    <script>
+        var headings = document.getElementsByClassName('heading');
+for (var i = 0; i < headings.length; i++) {
+  headings[i].style.background = 'green';
+}
+
+document.getElementById('heading').style.background='yellow';
+document.getElementById('heading').style.color='red';
+document.getElementById('heading').innerHTML='<h3 style="font-size:50px">My Name is ajmal</h3>';
+
+    </script>
+</body>
+</html>

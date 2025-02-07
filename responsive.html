@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> -->
+    <title>Document</title>
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 15px 20px;
+            box-shadow: 3px 3px 5px gray;
+        }
+        .nav-links {
+            display: flex;
+            gap: 50px;
+            list-style: none;
+        }
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+        }
+        .nav-links a {
+            padding: 10px;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+            border-radius: 7px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+
+        /* navbar start */
+        
+        /* Hamburger icon styling */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            /* Hide navigation links by default */
+            .nav-links {
+                display: none;
+                width: 100%;
+                background-color: #fff;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 20px;
+                text-align: center;
+                box-shadow: 3px 3px 5px gray; /* Add box-shadow to make it look better */
+                z-index: 10; /* Ensure it appears above other content */
+            }
+
+            /* Show hamburger icon */
+            .hamburger {
+                display: flex;
+            }
+
+            /* Show the nav links when the hamburger icon is clicked */
+            .nav-links.active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar" id="abc">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Logo">
+            </div>
+            <!-- Hamburger icon for mobile -->
+            <div class="hamburger" id="hamburger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        $(document).ready(function() {
+            $('#hamburger-icon').click(function() {
+                $('#nav-links').slideToggle();
+            });
+        });
+    </script>
+    
+</body>
+</html>
